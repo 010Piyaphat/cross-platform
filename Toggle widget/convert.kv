@@ -1,0 +1,43 @@
+<UI>:               #บอกลำดับการทำงาน
+    id:scr_manager   
+    Scr1:
+    Scr2:
+
+     #หน้า2
+<Scr2>:
+    name: "Scr2"
+    BoxLayout:
+        orientation: "vertical"
+        TextInput:
+            id: txt_number
+        BoxLayout:
+            ToggleButton:
+                text:"base2"
+                group:'convert_mode'
+                on_press: root.convert(*args)
+            ToggleButton:
+                text:"base8"
+                group:'convert_mode'
+                on_press: root.convert(*args)
+            ToggleButton:
+                text:"base16"
+                group:'convert_mode'
+                on_press: root.convert(*args)
+       
+        Label:
+            id: lbl_output
+<Scr1>:
+    name: "Scr1"
+    canvas.before:
+        Rectangle:
+            source:"14.jpg"
+            size: root.width, root.height
+        #ปรับตาม กว้างสูงของ rood
+            pos: self.pos
+    Button:
+        text:"แปลงเลขฐาน"
+        font_name:"tahoma"
+        size_hint:0.50, 0.12
+        pos_hint: {'x': 0.25,'y': 0.00}
+        background_color: 	'#FF6600'
+        on_press: app.root.current = "Scr2"  #แสดงหน้าปัจจุบัน
