@@ -1,0 +1,115 @@
+#:import os os 
+<UI6Screen>:
+    BoxLayout:
+        orientation: 'vertical'
+        canvas.before:
+            Color:
+                rgba:(1,1,1,1)
+            RoundedRectangle:
+                pos:self.pos
+                size:self.size
+                source:'boat.png'
+        RelativeLayout:
+            id:rl
+            canvas.after:
+                Color:
+                    rgba: (0, 1, 1, 0)
+                Rectangle:
+                    pos:self.pos
+                    size:self.size          
+            MDLabel:
+                adaptive_height:True
+                pos_hint: {'x': 0.03,'center_y':0.5}
+                text:'Enjoy Coding With Python Kivy and KivyMD'
+                theme_font_size:'Custom'
+                font_size: '25sp'
+                #size_hint_x:None
+                #width:rl.width-dp(40)
+                height:self.texture_size[1]
+                theme_text_color:'Custom'
+                text_color:'white'
+                bold:True        
+        BoxLayout:
+            size_hint_y:None
+            height:'380dp' 
+            padding: [dp(30),dp(10) , dp(30), dp(50)]
+            orientation:'vertical'
+            canvas.before:
+                Color:
+                    rgba:(1,1,1,0.7)
+                RoundedRectangle:
+                    pos:self.pos
+                    size:self.size
+                    radius:[dp(50),]
+            BoxLayout:
+                size_hint_y: None
+                height:dp(70)
+                # canvas.before:
+                #     Color:
+                #         rgba:(1,1,0,0.9)
+                #     RoundedRectangle:
+                #         pos:self.pos
+                #         size:self.size
+                #         radius:[50,]
+                MDLabel:
+                    text:'Welcome To KivyMD'
+                    bold: True
+                    theme_font_size:'Custom'
+                    font_size: '20sp'
+                    #opposite_colors: True
+                    size_hint_x: 1
+                Widget:
+                Widget:
+                    size_hint_x:None
+                    width: dp(70)
+                    canvas:
+                        Color:
+                            rgba:[1,1,1,1]
+                        Ellipse:
+                            pos:self.pos
+                            size:dp(70),dp(70)                           
+                            source:'nuk.jpg'
+            Widget:
+            MDLabel:
+                text:'Email'
+                size_hint_y: None
+                height: self.texture_size[1]
+                theme_font_size:'Custom'
+                font_size:'12sp'
+            MDTextField:
+                mode: "filled"
+                MDTextFieldLeadingIcon:
+                    icon: "account"
+                MDTextFieldHintText:
+                    text: "youremail@gmail.com" 
+                MDTextFieldTrailingIcon:
+                    icon: "information"
+            MDLabel:
+                text:'Password'
+                theme_font_size:'Custom'
+                font_size:'12sp'
+                size_hint_y:None
+                height:self.texture_size[1]
+            MDTextField:
+                mode: "filled"
+                MDTextFieldLeadingIcon:
+                    icon: "account-lock"
+                MDTextFieldHintText:
+                    text: "password"
+                
+                MDTextFieldTrailingIcon:
+                    icon: "eye-off"
+                MDTextFieldMaxLengthText:
+                    max_text_length: 10
+                #text:''
+            RelativeLayout:
+                #padding: [dp(30), dp(10), dp(30), dp(10)]
+                MDButton:
+                    theme_bg_color:'Custom'
+                    md_bg_color:'green'
+                    pos_hint:{'x':0.1,'center_y':0.3}
+                    MDButtonText:
+                    #size_hint_x:1
+                        text:'Sign In'
+                        theme_text_color:'Custom'
+                        text_color:'white'
